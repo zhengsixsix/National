@@ -1,0 +1,38 @@
+{
+  "name": "test-document",
+  "private": false,
+  "version": "0.0.4",
+  "main": "./dist/test-document.umd.js",
+  "module": "./dist/test-document.js",
+  "exports": {
+    ".": {
+      "import": "./dist/test-document.js",
+      "require": "./dist/test-document.umd.js"
+    }
+  },
+  "files": [
+    "dist/*"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@types/node": "^18.0.6",
+    "happy-dom": "^5.3.1",
+    "highlight.js": "^11.6.0",
+    "less": "^4.1.3",
+    "markdown-it": "^13.0.1",
+    "nationalstyle-ui": "^0.1.3",
+    "prismjs": "^1.28.0",
+    "vite-plugin-md": "^0.18.1",
+    "vue": "^3.2.37",
+    "vue-router": "^4.1.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.0.0",
+    "vite": "^3.0.0"
+  }
+}
