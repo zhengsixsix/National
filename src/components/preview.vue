@@ -41,6 +41,7 @@ const showOrhidecode = () => {
 };
 const sourceCode = ref("");
 async function getSourceCode() {
+  console.log(import.meta.env);
   const isDev = import.meta.env.MODE === "development";
   if (isDev) {
     sourceCode.value = (
