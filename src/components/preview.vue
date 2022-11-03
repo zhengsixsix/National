@@ -41,19 +41,20 @@ const showOrhidecode = () => {
 };
 const sourceCode = ref("");
 async function getSourceCode() {
-  console.log(import.meta.env);
   const isDev = import.meta.env.MODE === "development";
   if (isDev) {
     sourceCode.value = (
       await import(
         /* @vite-ignore */ `/src/packages/${props.compname}/doc/${props.demoname}.vue?raw`
-      )
+      )    
     ).default;
   } else {
-    sourceCode.value = await fetch(
+    await fetch(
       `/src/packages/${props.compname}/doc/${props.demoname}.vue`
     ).then((res) => {
-      res.text();
+      res.text().then(a=>{
+        sourceCode.value = a
+      })
     });
   }
 }
